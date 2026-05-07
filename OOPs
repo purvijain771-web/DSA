@@ -1,0 +1,116 @@
+#include <iostream>
+using namespace std;
+// Student class
+class Student{
+  public:
+  string name;
+  int age;
+  int roll_no;
+  void study(){
+    cout<<name<<" is Studying"<<endl;
+  }
+};
+int main()
+{
+  Student obj;
+  obj.name="Purvi";
+  obj.age=20;
+  obj.study();
+  return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+// Student class
+class Student{
+  public:
+  string name;
+  int age;
+  int roll_no;
+// Default constructor
+  Student(){
+    cout<<name<<"Default constructor called"<<endl;
+  }
+};
+int main(){
+  Student obj;
+  return 0;
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+// Student class
+class Student{
+  public:
+  string name;
+  int age;
+  int roll_no;
+  //Parameterized Constructor
+  Student(int a){
+    age=a;
+    cout<<age<<endl;
+  }
+};
+int main(){
+  Student obj(20);
+  return 0;
+}
+
+
+
+
+
+#include <iostream>
+using namespace std;
+// Student class
+class Student{
+  public:
+  string name;
+  int age;
+  int roll_no;
+  Student(string name,int age,int roll_no){
+    name=name;
+    age=age;
+    roll_no=roll_no;
+    cout<<name<<" "<<age<<" "<<roll_no<<endl;
+  }
+};
+int main(){
+  Student obj("Purvi" , 20 , 1422);
+  return 0;
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+class Banking{
+  public:
+  string holderName;
+  string address;
+  int accountNumber;
+  string bankName;
+  Banking(){
+    cout<<"default constructor called"<<endl;
+  }
+  Banking(string a){
+    holderName=a;
+    cout<<holderName<<endl;
+  }
+  Banking(string a,string b, int c, string d){
+    this->holderName=a;
+    this->address=b;
+    this->accountNumber=c;
+    this->bankName=d;
+    cout<<holderName<<" "<<address<<" "<<accountNumber<<" "<<bankName<<endl;
+  }
+};
+int main(){
+  Banking obj("Purvi","Jaipur",12345678,"SBI");
+  return 0;
+}
