@@ -1,0 +1,111 @@
+Q.1 Insert and End at Singly Linked List:-
+#include <iostream>
+using namespace std;
+
+// Structure of Node
+class Node {
+public:
+    int val;
+    Node *next;
+
+    Node(int v) {
+        val = v;
+        next = NULL;
+    }
+};
+
+// Insert at Start
+void insertAtStart(Node* &head, Node* &tail) {
+    if (head == NULL) {
+        Node *n = new Node(2);
+        head = n;
+        tail = n;
+    }
+    else {
+        Node *n = new Node(3);
+        n->next = head;
+        head = n;
+    }
+}
+
+// Insert at End
+void insertAtEnd(Node* &head, Node* &tail) {
+    if (head == NULL) {
+        Node *n = new Node(2);
+        head = n;
+        tail = n;
+    }
+    else {
+        Node *n = new Node(4);
+        tail->next = n;
+        tail = n;
+    }
+}
+
+// Display Linked List
+void display(Node *head) {
+    Node *temp = head;
+
+    while (temp != NULL) {
+        cout << temp->val << " ";
+        temp = temp->next;
+    }
+}
+
+int main() {
+
+    Node *head = NULL;
+    Node *tail = NULL;
+
+    insertAtStart(head, tail);
+    insertAtStart(head, tail);
+
+    insertAtEnd(head, tail);
+
+    display(head);
+
+    return 0;
+}
+***********************************************************************************************************************************************************
+Q.2 Floyd Cycle Algorithm - slow and fast pointer:-
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        //if linked list is empty or only have 1 node
+        if(head == NULL or head->next == NULL){
+            return head;
+        }
+        //if linked list has only 2 nodes 
+        if(head->next->next == NULL){
+            return head->next;
+        }
+        ListNode* slow = head;
+        ListNode* fast = head;
+        while(fast!=NULL && fast->next != NULL){
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        return slow;
+    }
+};
+*********************************************************************************************************************************************************************
+Q.3 Structure of Doubly Linked List:-
+#include <iostream>
+using namespace std;
+//Doubly Linked List Structure
+class Node{
+  public:
+  Node *prev; 
+  int val;
+  Node *next;
+  Node(int v){
+    val = v;
+    prev = NULL;
+    next = NULL;
+      
+  }
+};
+int main(){
+  
+  return 0;
+}
